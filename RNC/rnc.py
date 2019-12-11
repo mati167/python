@@ -7,7 +7,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers.convolutional import Conv2D
 from keras.layers.convolutional import MaxPooling2D
-from keras.layers import flatten
+from keras.layers import Flatten
 
 #CREANDO EL MODELO
 
@@ -25,7 +25,7 @@ clasificador.add(Conv2D(filters=32,kernel_size=3,strides=3,activation='relu'))
 clasificador.add(MaxPooling2D(pool_size=(2,2)))
 
 #paso 3 - aplanamiento
-clasificador.add(flatten)
+clasificador.add(Flatten())
 
 #paso 4 - conexion completa
 clasificador.add(Dense(units=128,activation='relu'))
